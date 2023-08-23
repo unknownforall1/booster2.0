@@ -1,6 +1,6 @@
 {
     "name": "ASHWANI.",
-    "logo": "https://te.legra.ph/file/07d39b85c6cea32f15259.jpg",
+    "logo": "http://telegra.ph/file/da67bb071fac5b01a5c8d.jpg",
     "keywords": [
         "telegram",
         "telethon",
@@ -8,7 +8,7 @@
         "PythonX",
         "SpamBots"
     ],
-    "repository": "https://github.com/ItZxSTaR/XBOTS",
+    "repository": "https://github.com/ASHWANIashwani/XBOTS",
     "env": {
       "BOT_TOKEN": {
         "description": "Telegram Bot Token Get This value from https://t.me/BotFather",
