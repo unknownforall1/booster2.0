@@ -8,23 +8,6 @@ from telethon import events
 from datetime import datetime
 
 
-@X1.on(events.NewMessage(incoming=True, pattern=r"\%scheck(?: |$)(.*)" % hl))
-@X2.on(events.NewMessage(incoming=True, pattern=r"\%scheck(?: |$)(.*)" % hl))
-@X3.on(events.NewMessage(incoming=True, pattern=r"\%scheck(?: |$)(.*)" % hl))
-@X4.on(events.NewMessage(incoming=True, pattern=r"\%scheck(?: |$)(.*)" % hl))
-@X5.on(events.NewMessage(incoming=True, pattern=r"\%scheck(?: |$)(.*)" % hl))
-@X6.on(events.NewMessage(incoming=True, pattern=r"\%scheck(?: |$)(.*)" % hl))
-@X7.on(events.NewMessage(incoming=True, pattern=r"\%scheck(?: |$)(.*)" % hl))
-@X8.on(events.NewMessage(incoming=True, pattern=r"\%scheck(?: |$)(.*)" % hl))
-@X9.on(events.NewMessage(incoming=True, pattern=r"\%scheck(?: |$)(.*)" % hl))
-@X10.on(events.NewMessage(incoming=True, pattern=r"\%scheck(?: |$)(.*)" % hl))
-async def ping(e):
-    if e.sender_id in SUDO_USERS:
-        start = datetime.now()
-        altron = await e.reply(f"» SPAM BOT BOOSTER")
-        end = datetime.now()
-        mp = (end - start).microseconds / 1000
-        await altron.edit(f"__⚡️⚡️__\n» `{mp} ᴍꜱ`")
 
 
 @X1.on(events.NewMessage(incoming=True, pattern=r"\%srestart(?: |$)(.*)" % hl))
@@ -112,17 +95,17 @@ async def addsudo(event):
             reply_msg = await event.get_reply_message()
             target = reply_msg.sender_id
         except:
-            await ok.edit("» BSDK...REPLY KRKE KAR !!")
+            await ok.edit("» REPLY KRKE KARO !!")
             return
 
         if str(target) in sudousers:
-            await ok.edit(f"YE HAMARA DOST HAI ISKO MAAT MARO ADD..BSDK.. !!")
+            await ok.delete()
         else:
             if len(sudousers) > 0:
                 newsudo = f"{sudousers} {target}"
             else:
                 newsudo = f"{target}"
-            await ok.edit(f"» **ɴᴇᴡ ꜱᴜᴅᴏ ᴜꜱᴇʀ**: `{target}`\n» `ADD KAR DIYE HAI SUDO..BOT RESTART HO RHA HAI`")
+            await ok.delete()
             heroku_var["SUDO_USERS"] = newsudo    
     
     elif event.sender_id in SUDO_USERS:
